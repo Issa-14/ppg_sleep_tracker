@@ -1,7 +1,7 @@
 #include <Arduino.h>
 #include <Wire.h>
 #include "MAX30105.h"
-#include "heartRate.h"   // comes with the SparkFun MAX3010x library
+#include "heartRate.h" 
 
 MAX30105 sensor;
 
@@ -79,7 +79,7 @@ void loop() {
       if (lastBeatMs != 0) {
         uint32_t dt = now - lastBeatMs;
 
-        // accept only plausible RR (prevents double triggers + junk)
+        // accept only plausible RR 
         if (dt >= 350 && dt <= 2000) {
           float bpm = 60000.0f / dt;
 
